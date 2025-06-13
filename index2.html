@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input;
+
+      while (true) {
+        // умова, що в разі помилки буде повертати код
+        input = prompt("enter only 5 digits:");
+        if (input === null) {
+          // якщо користувач натискає отмена
+          alert("ok, bye");
+        }
+        input = input.trim(); // видаляє пробіли на початку і в кінці
+
+        if (/^\d{5}$/.test(input)) {
+          //"//" обмежувачі, ^ початок, $ кінець рядка, \d (0-9), {5} 5 разів, test.(input) перевірка шаблонної строки true/false
+          alert("your number: " + input.split("").join(" ")); // split - перетворює на символи, join ставить між ними пробіли
+          break; // повторює якщо неправильно
+        } else {
+          alert("error: you need to enter only 5 digits"); // помилка при введенні
+        }
+      }
+    </script>
+  </body>
+</html>
